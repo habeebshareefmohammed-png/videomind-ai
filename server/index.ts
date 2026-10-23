@@ -28,8 +28,8 @@ app.get('/api/health', (_req, res) => {
   });
 });
 
-// Start listening
-app.listen(CONFIG.PORT, () => {
+// Start listening on all network interfaces (public/LAN)
+app.listen(CONFIG.PORT, '0.0.0.0', () => {
   console.log(`===============================================`);
   console.log(`🚀 VideoMind AI Backend running on port ${CONFIG.PORT}`);
   console.log(`📹 Max video size: ${CONFIG.MAX_FILE_SIZE_MB}MB`);
